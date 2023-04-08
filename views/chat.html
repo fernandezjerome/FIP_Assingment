@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="css/main.css" />
+        <title>Chat</title>
+        <script
+            src="https://kit.fontawesome.com/62e3d456b9.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <header class="header head-colour">
+            <nav id="sidenav">
+                <a href="/">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Products</a>
+                <a href="/chat">Chat</a>
+            </nav>
+
+            <nav class="header__nav">
+                <!-- grid 1 logo icon-->
+                <div class="header__logo">
+                    <img src="images/safe-logo-3.svg" alt="housecom logo" />
+                </div>
+                <!-- grid 2 -->
+                <a id="btnHamburger" href="#" class="header__burger">
+                    <span></span>
+                    <!-- for easier to click on menu -->
+                    <div></div>
+                </a>
+                <!-- grid 3 -->
+                <li class="header__links">
+                    <a href="/">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Services</a>
+                    <a href="#">Products</a>
+                    <a href="/chat">Chat </a>
+                </li>
+                <!-- grid 4 -->
+                <a href="/chat" class="header__btn btn">Join Chat</a>
+                <i class="fa-solid fa-comment header__qoute"></i>
+            </nav>
+        </header>
+        <main id="app">
+            <!-- login page -->
+            <section id="login-overlay" v-if="!isHidden">
+                <div class="login-box">
+                    <div class="title">
+                        <p>Welcome to</p>
+                        <h1>ChatAPP</h1>
+                    </div>
+                    <!-- <input
+                        v-model="fname"
+                        type="fname"
+                        placeholder="First name"
+                    />
+                    <input
+                        v-model="lname"
+                        type="lname"
+                        placeholder="Last name"
+                    /> -->
+
+                    <input
+                        v-model="nickname"
+                        type="text"
+                        id="username"
+                        class="username"
+                        placeholder="nickname"
+                    />
+
+                    <button
+                        v-on:click="isHidden = true"
+                        id="usernameSubmit"
+                        class="btn"
+                        type="submit"
+                    >
+                        Join Chat!
+                    </button>
+                </div>
+            </section>
+            <div class="spacer"></div>
+            <section class="center">
+                <div class="center__copy">
+                    <h2 class="hidden">Join Chat</h2>
+                    <p><span> JOIN OUR CONVERSATION</span></p>
+                    <h3>Against Bullying in Basketball</h3>
+                    <p>
+                        Connect with other basketball enthusiasts who share our
+                        vision for an inclusive and safe sport. Our chat app
+                        provides a platform for open dialogue and support
+                        against bullying in basketball. Share your experiences,
+                        ask for advice, and collaborate on ways to create
+                        positive change. Join us in standing up against bullying
+                        and promoting a culture of respect on and off the court.
+                    </p>
+                </div>
+                <section class="chat">
+                    <!-- Messages box -->
+                    <div class="typing-event">
+                        <p v-if="typing">{{ typist }}</p>
+                        <usertyping></usertyping>
+                    </div>
+                    <section class="messages">
+                        <div class="recieve_container">
+                            <ul>
+                                <!-- render a new message component for every message -->
+                                <newmsg
+                                    v-for="message in messages"
+                                    :message="message"
+                                ></newmsg>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Message container-->
+
+                    <section>
+                        <form class="message_container">
+                            <textarea
+                                @focus="catchTextFocus"
+                                v-model="message"
+                                id="textarea"
+                                autocomplete="off"
+                            ></textarea>
+
+                            <input
+                                @click.prevent="dispatchMessage"
+                                type="submit"
+                                value="Send"
+                                class="send btn"
+                            />
+                        </form>
+                    </section>
+                </section>
+            </section>
+            <div class="spacer"></div>
+        </main>
+        <footer>
+            <footer class="footer">
+                <div class="spacer2"></div>
+                <nav class="footer__nav">
+                    <section class="footer__links">
+                        <div>
+                            <h3>Official Links</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">Home</a>
+                                    <a href="#">Service</a>
+                                    <a href="#">About us</a>
+                                    <a href="#">Contact us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="footer__useful">
+                        <div>
+                            <h3>Useful Links</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">Help</a>
+                                    <a href="#">History</a>
+                                    <a href="#">Support</a>
+                                    <a href="#">Faq</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="footer__contact">
+                        <h3>Contact Information</h3>
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <p>
+                                1001 Fanshawe College Blvd, London, ON N5Y 5R6
+                            </p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>yourmail@gmail.com</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-phone"></i>
+                            <p>011548454544</p>
+                        </div>
+                    </section>
+                    <section class="footer__logo">
+                        <div>
+                            <img src="/images/safe-logo-white.svg" alt="" />
+                        </div>
+                        <div>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Magnam earum ratione veritatis
+                                sint. Aliquid error perferendis quod a
+                                dignissimos ea.
+                            </p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                    </section>
+                    <section class="footer__reserve">
+                        <p>Copyright by SAFEREACH 2023. All rights reserved.</p>
+                    </section>
+                </nav>
+            </footer>
+        </footer>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/main.js" type="module" defer></script>
+    </body>
+</html>
