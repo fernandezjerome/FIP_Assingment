@@ -38,9 +38,6 @@ The team overcame the challenges of this project through careful planning and co
 
 The team members made significant contributions to this project. Each member contributed to the planning and design process, and collaborated on the development of the website. Additionally, team members created various marketing and advertising materials such as banner ads, videos, and frontend designs. Finally, each member played a key role in testing and ensuring that the website functioned correctly.
 
-## Conclusion
-
-Overall, this project was a success. The team was able to create an effective and user-friendly website that supported the campaign's initiative. The team overcame various challenges through careful planning, collaboration, and testing. Additionally, each member made significant contributions to the project's success.
 
 ## Contributors
 
