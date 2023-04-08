@@ -8,8 +8,8 @@ The FIP Anti-Bullying Campaign aims to raise awareness about bullying in sports 
 
 1. Open the project folder in VS Code or any other code editor.
 2. On the terminal, type npm audit fix --force to install essential node_modules files.
-3. Download the Lumen file and import the database file in PHPMyAdmin.
-4. Extract the lumen.zip file into htdocs.
+3. Extract the lumen.zip file into `htdocs` in mamp or `www` in wamp
+4. Import the database file in PHPMyAdmin.
 5. Add the database file at /database/db_mission_vision.sql.
 6. The database name should be db_mission_vision.
 7. Change the .env file on the root directory depending on the virtual local server.
