@@ -4,6 +4,9 @@
 
 The FIP Anti-Bullying Campaign aims to raise awareness about bullying in sports and create a website that provides information, strategies, and a platform for sharing stories of individuals who have experienced bullying in sports.
 
+## Video and Banner Files
+https://drive.google.com/drive/folders/1M4zp9yepLazy2aj-qaU92cCe5Ln7QYpn
+
 ## How to Run
 
 1. Open the project folder in VS Code or any other code editor.
